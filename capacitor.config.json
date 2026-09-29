@@ -1,0 +1,11 @@
+{
+  "appId": "it.memocorsi.app",
+  "appName": "Memo Corsi",
+  "webDir": "www",
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_notify",
+      "iconColor": "#4f46e5"
+    }
+  }
+}

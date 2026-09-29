@@ -1,0 +1,23 @@
+{
+  "name": "memo-corsi",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build:web": "node scripts/build-web.mjs && tailwindcss -i src/input.css -o www/tailwind.css --minify",
+    "android:setup": "npm run build:web && cap add android && node scripts/patch-android.mjs && capacitor-assets generate --android && cap sync android",
+    "android:sync": "npm run build:web && cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/local-notifications": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.0.0",
+    "lucide": "0.x",
+    "tailwindcss": "^3.4.17"
+  }
+}
